@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-#include <Windows.h>
 
 using namespace std;
 
@@ -27,7 +26,7 @@ bool isMatrixGankels(M const& v) {
 
 	for (size_t i = 0; i < n; i++) {
 
-		for (int j = 0; j < n; j++) {
+		for (size_t j = 0; j < n; j++) {
 
 			if (i + j < n) {
 				if (v[i][j] != v[i + j][0]) return false;
@@ -43,9 +42,6 @@ bool isMatrixGankels(M const& v) {
 
 int main() {
 
-	SetConsoleCP(1251);
-	SetConsoleOutputCP(1251);
-
 	vector<vector<int>> vector = {
 	{1,2,3,4,5},
 	{2,3,4,5,6},
@@ -55,9 +51,9 @@ int main() {
 	};
 
 
-	if (isMatrixGankels(vector)) cout << "Матрица ганкелева";
+	if (isMatrixGankels(vector)) cout << "Matrix is Hankel's";
 	else {
-		cout << "Матрица либо не матрица, либо не ганкелева";
+		cout << "The matrix is either not a matrix or not a Hankel's matrix";
 	}
 	return 0;
 }
